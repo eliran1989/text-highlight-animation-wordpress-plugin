@@ -1,6 +1,5 @@
 
 jQuery(document).ready(function($) {
-    debugger;
     $(".animated_highlight").each(function(){
         var hightlight = $(this);
         console.log(hightlight);
