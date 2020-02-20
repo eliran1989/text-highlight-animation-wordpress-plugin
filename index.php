@@ -27,6 +27,27 @@ function block_editor_text_highlight_button() {
 }
 
 
+
+
+
+function enqueue_classic_editor_scripts($plugin_array){
+    $plugin_array["highlight"] =  plugin_dir_url( __FILE__ ) . "/js/mark-highlight-button-classic-editor.js";
+    return $plugin_array;
+}
+
+add_filter("mce_external_plugins", "enqueue_classic_editor_scripts");
+
+
+function register_highlight_button_editor($buttons){
+	array_push($buttons, "highlight");
+	return $buttons;
+}
+
+add_filter("mce_buttons", "register_highlight_button_editor");
+
+
+
+
 ?>
 
 
